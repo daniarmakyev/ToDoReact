@@ -1,0 +1,18 @@
+@theme {
+  --color-bg: #f7f7f7;
+  --color-text: black;
+  --track-color: #f1f1f1;
+  --thumb-color: #c1c1c1;
+  --thumb-hover-color: #a8a8a8;
+  --text-muted: #6b7280;
+  --color-purple: #6c63ff;
+}
+
+.dark {
+  --color-bg: #252525;
+  --color-text: #f7f7f7;
+  --track-color: #4b5563;
+  --thumb-color: #6b7280;
+  --thumb-hover-color: #9ca3af; 
+  --text-muted: #9ca3af;
+}
