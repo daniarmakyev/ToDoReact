@@ -1,18 +1,25 @@
 @theme {
-  --color-bg: #f7f7f7;
-  --color-text: black;
-  --track-color: #f1f1f1;
-  --thumb-color: #c1c1c1;
-  --thumb-hover-color: #a8a8a8;
-  --text-muted: #6b7280;
+  --color-primary-bg: #f7f7f7;
+  --color-primary: #6c63ff;
+  --color-white: #f7f7f7;
   --color-purple: #6c63ff;
+  --color-select-hover-purple: rgba(108, 99, 255, 0.2);
+  --color-dark-purple: #5850dd;
+  --color-select-opened: #534cc2;
+  --color-primary-border: #6c63ff;
+  --color-primary-outline: rgba(108, 99, 255, 0.4);
+  --color-input-placeholder: #c3c1e6;
 }
 
 .dark {
-  --color-bg: #252525;
-  --color-text: #f7f7f7;
-  --track-color: #4b5563;
-  --thumb-color: #6b7280;
-  --thumb-hover-color: #9ca3af; 
-  --text-muted: #9ca3af;
+  --color-primary-bg: #252525;
+  --color-primary: #f7f7f7;
+  --color-white: #f7f7f7;
+  --color-purple: #6c63ff;
+  --color-select-hover-purple: rgba(108, 99, 255, 0.2);
+  --color-dark-purple: #5850dd;
+  --color-select-opened: #534cc2;
+  --color-primary-border: #fff;
+  --color-primary-outline: rgba(255, 255, 255, 0.4);
+  --color-input-placeholder: #666666;
 }

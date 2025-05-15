@@ -3,8 +3,10 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  transition: all 0.2s ease;
+  font-family: "Kanit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .container {
@@ -32,8 +34,6 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -44,12 +44,6 @@ html {
   scrollbar-color: var(--thumb-color) var(--track-color);
   background-color: var(--color-bg);
   color: var(--color-text);
-}
-
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  transition: background-color 0.3s, color 0.3s;
 }
 
 section {
