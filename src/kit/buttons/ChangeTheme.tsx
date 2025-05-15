@@ -10,7 +10,7 @@ const ChangeTheme = ({
   return (
     <button
       onClick={onClick}
-      className="bg-purple hover:bg-dark-purple hover:shadow-[0_0_4px_0_rgb(108,99,255)] rounded-md p-2"
+      className="bg-purple hover:bg-dark-purple hover:shadow-[0_0_4px_0_rgb(108,99,255)] rounded-md p-2 h-10"
     >
       {theme ? (
         <svg

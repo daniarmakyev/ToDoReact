@@ -2,11 +2,11 @@ import React from "react";
 
 const InputSearch = () => {
   return (
-    <div className="relative w-full max-w-[490px] mx-auto text-[16px]">
+    <div className="relative w-full max-w-[595px] mx-auto text-[16px]">
       <input
         type="text"
         placeholder="Search note..."
-        className="placeholder:text-input-placeholder w-full bg-primary-bg rounded-sm max-h-9 text-primary border px-4 py-2 border-primary-border focus:outline-2 outline-primary-outline"
+        className="placeholder:text-input-placeholder w-full bg-primary-bg rounded-sm max-h-9 text-primary border px-4 py-2 min-h-10 border-primary-border focus:outline-2 outline-primary-outline"
       />
       <svg
         width="21.000000"

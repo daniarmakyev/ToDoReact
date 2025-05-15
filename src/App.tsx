@@ -15,18 +15,20 @@ function App() {
       root.classList.remove("dark");
     }
   }, [darkMode]);
+
   return (
-    <>
-      <div className="bg-primary-bg h-screen">
+    <div className="bg-primary-bg h-screen flex flex-col items-center relative px-2">
+      <h1 className="mb-4 text-white-black text-2xl md:mt-10 mt-5">TODO LIST</h1>
+      <div className="flex gap-4 w-full max-w-[750px]">
         <InputSearch />
         <Select list={["lol", "lol", "lol", "lol"]} thumb="all" />
         <ChangeTheme
           theme={darkMode}
           onClick={() => setDarkMode((prev) => !prev)}
         />
-        <AddTask onClick={() => console.log("clicked")} />
       </div>
-    </>
+      <AddTask onClick={() => console.log("clicked")} className={"absolute bottom-8 right-[10vw]"}/>
+    </div>
   );
 }
 
