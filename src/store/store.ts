@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import taskSlice from "./task.slice";
+import taskSlice from "./slice/task.slice";
 
 
 

@@ -31,7 +31,7 @@ const Select = ({ thumb, list }: { thumb: string; list: string[] }) => {
             {list.map((item, index) => (
               <li
                 key={index}
-                className="hover:bg-select-hover-purple px-0.5 py-0.5 cursor-pointer"
+                className="hover:bg-select-hover-purple px-0.5 py-0.5 cursor-pointer text-nowrap"
               >
                 {item}
               </li>

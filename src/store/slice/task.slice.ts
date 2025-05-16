@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getTaskList } from "./task.action";
+import { getTaskList } from "../action/task.action";
 
 export interface ITask {
     id: string;
@@ -46,7 +46,7 @@ const taskSlice = createSlice({
             .addCase(getTaskList.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || "Failed to fetch tasks";
-            });
+            })
     },
 });
 

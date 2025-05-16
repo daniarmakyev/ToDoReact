@@ -1,30 +1,32 @@
-import type { ITask } from "../../store/task.slice";
+import type { ITask } from "../../store/slice/task.slice";
 import CheckBox from "./ChekBox";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
 
 const TaskItem = ({
   task,
-  onChange,
+  cheked,
+  checkBoxOnClick,
 }: {
   task: ITask;
-  onChange: (checked: boolean) => void;
+  cheked: boolean;
+  checkBoxOnClick: React.MouseEventHandler<HTMLButtonElement>;
 }) => {
   return (
     <li className="flex justify-between items-center border-b-purple border-b-[1px] pb-2">
       <div className="flex items-center gap-3">
-        <CheckBox checked={task.status === "Done"} onChange={onChange} />
+        <CheckBox checked={cheked} checkBoxOnClick={checkBoxOnClick} />
         <div>
           <h5
             className={`text-xl m-0 text-white-black ${
-              task.status === "Done" ? "line-through" : ""
+              cheked ? "line-through" : ""
             }`}
           >
             {task.title}
           </h5>
           <p
             className={`text-sm font-normal text-[#a9a9a9] ${
-              task.status === "Done" ? "line-through" : ""
+              cheked ? "line-through" : ""
             }`}
           >
             {task.description}

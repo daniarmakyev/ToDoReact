@@ -6,7 +6,7 @@ const EditButton = ({
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }) => {
   return (
-    <button onClick={onClick} className="text-[#CDCDCD] hover:text-purple">
+    <button onClick={onClick} className="text-[#CDCDCD] hover:text-purple" type="button">
       <svg
         width="14.001709"
         height="14.001678"

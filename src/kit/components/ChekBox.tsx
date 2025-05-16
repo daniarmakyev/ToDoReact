@@ -1,20 +1,19 @@
 import React from "react";
 
-interface CheckBoxProps {
+const CheckBox = ({
+  checked = false,
+  checkBoxOnClick,
+}: {
   checked?: boolean;
-  onChange?: (checked: boolean) => void;
-}
-
-const CheckBox: React.FC<CheckBoxProps> = ({ checked = false, onChange }) => {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (onChange) {
-      onChange(!checked);
-    }
-  };
-
+  checkBoxOnClick: React.MouseEventHandler<HTMLButtonElement>;
+}) => {
   return (
     <button
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        checkBoxOnClick(e);
+      }}
       type="button"
       className={`
         w-6 h-6
@@ -23,7 +22,6 @@ const CheckBox: React.FC<CheckBoxProps> = ({ checked = false, onChange }) => {
         cursor-pointer transition-colors
         ${checked ? "bg-purple border-purple" : "border-purple"}
       `}
-      onClick={(e) => {handleClick(e)}}
     >
       {checked && (
         <svg

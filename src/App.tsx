@@ -5,10 +5,18 @@ import ChangeTheme from "./kit/components/ChangeThemeButton";
 import AddTask from "./kit/components/AddTaskButton";
 import TaskItem from "./kit/components/TaskItem";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
-import { getTaskList, taskStatusChange } from "./store/task.action";
+import { getTaskList, taskStatusChange } from "./store/action/task.action";
+import TaskModal from "./kit/components/TaskModal";
+
+const filterSelectList = ["All", "In Progress", "Done"];
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("darkMode");
+    return savedTheme ? JSON.parse(savedTheme) : false;
+  });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const { tasks } = useAppSelector((state) => state.task);
   const dispatch = useAppDispatch();
 
@@ -16,13 +24,19 @@ function App() {
     dispatch(getTaskList());
   }, [dispatch]);
 
+  function checkBoxHandler(
+    e: React.MouseEvent<HTMLButtonElement>,
+    taskId: string,
+    checked: boolean
+  ) {
+    e.preventDefault();
+    dispatch(taskStatusChange({ taskId: taskId, checked: !checked }));
+  }
+
   useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
     const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
+    root.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   return (
@@ -33,33 +47,31 @@ function App() {
         </h1>
         <div className="flex gap-4 w-full">
           <InputSearch />
-          <Select list={["lol", "lol", "lol", "lol"]} thumb="all" />
+          <Select list={filterSelectList} thumb={filterSelectList[0]} />
           <ChangeTheme
             theme={darkMode}
-            onClick={() => setDarkMode((prev) => !prev)}
+            onClick={() => setDarkMode((prev: boolean) => !prev)}
           />
         </div>
         <ul className="mt-5 flex flex-col gap-4">
-          {tasks &&
-            tasks.map((task) => (
-              <TaskItem
-                key={task.id}
-                task={task}
-                onChange={(checked) =>
-                  dispatch(
-                    taskStatusChange({
-                      taskId: task.id,
-                      checked: checked,
-                    })
-                  )
-                }
-              />
-            ))}
+          {tasks?.map((task) => (
+            <TaskItem
+              key={task.id}
+              task={task}
+              cheked={task.status === "Done"}
+              checkBoxOnClick={(e) =>
+                checkBoxHandler(e, task.id, task.status === "Done")
+              }
+            />
+          ))}
         </ul>
         <AddTask
-          onClick={() => console.log("clicked")}
-          className={"absolute bottom-8 right-[10vw]"}
+          onClick={() => setIsModalOpen(true)}
+          className="absolute bottom-8 right-[10vw]"
         />
+        {isModalOpen && (
+          <TaskModal onClose={() => setIsModalOpen(false)} />
+        )}
       </div>
     </div>
   );
