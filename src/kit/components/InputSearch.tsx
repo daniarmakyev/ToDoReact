@@ -1,5 +1,3 @@
-import React from "react";
-
 const InputSearch = () => {
   return (
     <div className="relative w-full max-w-[595px] mx-auto text-[16px]">

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Edit = ({
+const EditButton = ({
   onClick,
 }: {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -23,4 +23,4 @@ const Edit = ({
   );
 };
 
-export default Edit;
+export default EditButton;

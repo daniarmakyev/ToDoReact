@@ -2,6 +2,7 @@
   --color-primary-bg: #f7f7f7;
   --color-primary: #6c63ff;
   --color-white: #f7f7f7;
+  --color-black: #252525;
   --color-white-black: #252525;
   --color-purple: #6c63ff;
   --color-select-hover-purple: rgba(108, 99, 255, 0.2);
@@ -16,6 +17,7 @@
   --color-primary-bg: #252525;
   --color-primary: #f7f7f7;
   --color-white: #f7f7f7;
+  --color-black: #252525;
   --color-white-black: #f7f7f7;
   --color-purple: #6c63ff;
   --color-select-hover-purple: rgba(108, 99, 255, 0.2);

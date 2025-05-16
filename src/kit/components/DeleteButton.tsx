@@ -1,18 +1,13 @@
 import React from "react";
 
-const Delete = ({
+const DeleteButton = ({
   onClick,
 }: {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }) => {
   return (
-    <button onClick={onClick} className="text-[#CDCDCD] hover:text-[#E50000]">
-      <svg
-        width="18.000000"
-        height="18.000000"
-        viewBox="0 0 18 18"
-        fill="none"
-      >
+    <button onClick={onClick} className="text-[#CDCDCD] hover:text-[#E50000]" type="button">
+      <svg width="18.000000" height="18.000000" viewBox="0 0 18 18" fill="none">
         <defs>
           <clipPath id="clip18_329">
             <rect
@@ -80,4 +75,4 @@ const Delete = ({
   );
 };
 
-export default Delete;
+export default DeleteButton;

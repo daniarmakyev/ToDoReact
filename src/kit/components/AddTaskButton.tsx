@@ -1,8 +1,8 @@
 import React from "react";
 
-const AddTask = ({
+const AddTaskButton = ({
   onClick,
-  className
+  className,
 }: {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
@@ -10,7 +10,10 @@ const AddTask = ({
   return (
     <button
       onClick={onClick}
-      className={className + ` bg-purple w-[50px] h-[50px] rounded-full hover:bg-dark-purple shadow-[0_0_4px_0_rgb(108,99,255)] p-2 flex justify-center items-center border-2 border-transparent`}
+      className={
+        className +
+        ` bg-purple w-[50px] h-[50px] rounded-full hover:bg-dark-purple shadow-[0_0_4px_0_rgb(108,99,255)] p-2 flex justify-center items-center border-2 border-transparent`
+      }
       style={{
         borderColor: "var(--color-purple)",
       }}
@@ -26,4 +29,4 @@ const AddTask = ({
   );
 };
 
-export default AddTask;
+export default AddTaskButton;

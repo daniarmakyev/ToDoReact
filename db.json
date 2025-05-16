@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "id": "tsk_001",
+      "title": "Implement user authentication",
+      "description": "Create login and registration endpoints",
+      "status": "Done",
+      "date": "2023-06-10T08:30:00Z"
+    },
+    {
+      "id": "tsk_002",
+      "title": "Design database schema",
+      "description": "Create ER diagram for the application",
+      "status": "Done",
+      "date": "2023-05-28T00:00:00Z"
+    },
+    {
+      "id": "tsk_003",
+      "title": "Setup CI/CD pipeline",
+      "description": "Configure GitHub Actions for deployment",
+      "status": "Done",
+      "date": "2023-06-15T00:00:00Z"
+    }
+  ]
+}

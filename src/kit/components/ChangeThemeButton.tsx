@@ -1,6 +1,6 @@
 import React from "react";
 
-const ChangeTheme = ({
+const ChangeThemeButton = ({
   theme,
   onClick,
 }: {
@@ -43,4 +43,4 @@ const ChangeTheme = ({
   );
 };
 
-export default ChangeTheme;
+export default ChangeThemeButton;

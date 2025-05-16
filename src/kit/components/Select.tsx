@@ -21,14 +21,8 @@ const Select = ({ thumb, list }: { thumb: string; list: string[] }) => {
         {thumb}
         <svg width="10" height="10" viewBox="0 0 7.74255 4.00406">
           <defs />
-          <path
-            d="M3.87 3.5L0.5 0.5"
-            stroke="#F7F7F7"
-          />
-          <path
-            d="M7.24 0.5L3.87 3.5"
-            stroke="#F7F7F7"
-          />
+          <path d="M3.87 3.5L0.5 0.5" stroke="#F7F7F7" />
+          <path d="M7.24 0.5L3.87 3.5" stroke="#F7F7F7" />
         </svg>
       </button>
       {open && (
