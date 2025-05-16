@@ -8,8 +8,8 @@ const EditButton = ({
   return (
     <button onClick={onClick} className="text-[#CDCDCD] hover:text-purple" type="button">
       <svg
-        width="14.001709"
-        height="14.001678"
+        width="18.001709"
+        height="18.001678"
         viewBox="0 0 14.0017 14.0017"
         fill="none"
       >

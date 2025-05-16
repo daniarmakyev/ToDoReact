@@ -6,14 +6,22 @@ interface InputProps {
   onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   className?: string;
   isTextarea?: boolean;
+  name?: string;
+  value?: string;
+  defaultValue?: string;
+  readOnly: boolean;
 }
 
 const Input = ({
   type = "text",
   placeholder,
   onChange,
-  className,
+  className = "",
   isTextarea = false,
+  name,
+  value,
+  defaultValue,
+  readOnly = false,
 }: InputProps) => {
   const baseClass =
     "placeholder:text-input-placeholder w-full bg-primary-bg rounded-sm text-primary border px-4 py-2 border-primary-border focus:outline-2 outline-primary-outline";
@@ -21,20 +29,28 @@ const Input = ({
   if (isTextarea) {
     return (
       <textarea
-        className={className + " " + baseClass}
+        name={name}
+        className={`${className} ${baseClass}`}
         placeholder={placeholder}
         onChange={onChange}
         rows={4}
+        value={value}
+        defaultValue={defaultValue}
+        readOnly={readOnly}
       />
     );
   }
 
   return (
     <input
-      className={className + " " + baseClass + " max-h-9 min-h-10"}
+      name={name}
+      className={`${className} ${baseClass} max-h-9 min-h-10`}
       type={type}
       placeholder={placeholder}
       onChange={onChange}
+      value={value}
+      defaultValue={defaultValue}
+      readOnly={readOnly}
     />
   );
 };

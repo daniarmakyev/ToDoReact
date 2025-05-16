@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getTaskList } from "../action/task.action";
 
 export interface ITask {
-    id: string;
+    id?: string;
     title: string;
     description: string;
     status: "In Progress" | "Done" | string;

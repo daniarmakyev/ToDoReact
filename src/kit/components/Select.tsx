@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const Select = ({ thumb, list }: { thumb: string; list: string[] }) => {
+const Select = ({
+  thumb,
+  list,
+  onChange,
+}: {
+  thumb: string;
+  list: string[];
+  onChange: (value: string) => void; 
+}) => {
   const [open, setOpen] = useState(false);
+
+  const handleSelectItem = (item: string) => {
+    onChange(item);
+    setOpen(false);
+  };
 
   return (
     <div className="relative inline-block text-lg max-w-[93px] w-full">
       <button
-        className="bg-dark-purple flex justify-between items-center font-medium text-white text-lg w-full hover:shadow-[0_0_4px_0_rgb(108,99,255)]  px-2 rounded-md text-left h-10  border-2 border-transparent"
+        className="bg-dark-purple flex justify-between items-center font-medium text-white text-lg w-full hover:shadow-[0_0_4px_0_rgb(108,99,255)] px-2 rounded-md text-left h-10 border-2 border-transparent"
         style={
           open
             ? {
@@ -17,9 +30,18 @@ const Select = ({ thumb, list }: { thumb: string; list: string[] }) => {
             : {}
         }
         onClick={() => setOpen((prev) => !prev)}
+        type="button" // Explicitly set button type to prevent form submission
       >
         {thumb}
-        <svg width="10" height="10" viewBox="0 0 7.74255 4.00406">
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 7.74255 4.00406"
+          style={{
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.2s ease-in-out",
+          }}
+        >
           <defs />
           <path d="M3.87 3.5L0.5 0.5" stroke="#F7F7F7" />
           <path d="M7.24 0.5L3.87 3.5" stroke="#F7F7F7" />
@@ -32,6 +54,7 @@ const Select = ({ thumb, list }: { thumb: string; list: string[] }) => {
               <li
                 key={index}
                 className="hover:bg-select-hover-purple px-0.5 py-0.5 cursor-pointer text-nowrap"
+                onClick={() => handleSelectItem(item)}
               >
                 {item}
               </li>
