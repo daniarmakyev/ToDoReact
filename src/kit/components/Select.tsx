@@ -19,7 +19,7 @@ const Select = ({
   return (
     <div className="relative inline-block text-lg max-w-[93px] w-full">
       <button
-        className="bg-dark-purple flex justify-between items-center font-medium text-white text-lg w-full hover:shadow-[0_0_4px_0_rgb(108,99,255)] px-2 rounded-md text-left h-10 border-2 border-transparent"
+        className="bg-dark-purple flex justify-between items-center font-medium text-white text-sm w-full hover:shadow-[0_0_4px_0_rgb(108,99,255)] px-2 rounded-md text-left h-10 border-2 border-transparent"
         style={
           open
             ? {

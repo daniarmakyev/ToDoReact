@@ -1,10 +1,9 @@
-import React from "react";
-
 const EditButton = ({ onClick }: { onClick: () => void }) => {
   return (
     <button
       onClick={(e) => {
         e.preventDefault();
+        e.stopPropagation();
         onClick();
       }}
       className="text-[#CDCDCD] hover:text-purple"

@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 
 const Input = ({
   type = "text",
@@ -13,7 +13,7 @@ const Input = ({
 }: {
   type?: string;
   placeholder?: string;
-  onChange?: () => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   className?: string;
   isTextarea?: boolean;
   name?: string;

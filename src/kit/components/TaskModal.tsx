@@ -39,7 +39,7 @@ const TaskModal = ({
     if (isView) return;
 
     if (!formData.title.trim() || !formData.date) {
-      alert("Please fill all fileds");
+      alert("Please fill all fields");
       return;
     }
 
@@ -97,7 +97,7 @@ const TaskModal = ({
           <Input
             name="title"
             placeholder="Input your note..."
-            onChange={() => handleChange}
+            onChange={handleChange}
             value={formData.title}
             readOnly={isView}
           />
@@ -106,14 +106,14 @@ const TaskModal = ({
             className="min-h-28"
             placeholder="Input your note description..."
             isTextarea
-            onChange={() => handleChange}
+            onChange={handleChange}
             value={formData.description}
             readOnly={isView}
           />
           <Input
             name="date"
             type="date"
-            onChange={() => handleChange}
+            onChange={handleChange}
             value={formData.date}
             readOnly={isView}
           />

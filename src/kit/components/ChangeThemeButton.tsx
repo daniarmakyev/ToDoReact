@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const ChangeThemeButton = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -16,7 +16,7 @@ const ChangeThemeButton = () => {
     <button
       onClick={(e) => {
         e.preventDefault();
-        setDarkMode((prev: boolean) => !prev)
+        setDarkMode((prev: boolean) => !prev);
       }}
       className="bg-purple hover:bg-dark-purple hover:shadow-[0_0_4px_0_rgb(108,99,255)] rounded-md p-2 h-10"
     >

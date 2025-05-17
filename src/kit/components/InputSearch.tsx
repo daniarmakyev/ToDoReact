@@ -3,7 +3,7 @@ const InputSearch = ({
   onChange,
 }: {
   value: string;
-  onChange:() => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
   return (
     <div className="relative w-full max-w-[595px] mx-auto text-[16px]">

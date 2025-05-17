@@ -16,7 +16,7 @@ const TaskItem = ({
   const cheked = task.status === "Done";
   return (
     <li
-      className="flex justify-between items-center border-b-purple border-b-[1px] pb-3 pt-3 hover:bg-task-hover cursor-pointer p-1"
+      className="w-full flex justify-between items-center border-b-purple border-b-[1px] pb-3 pt-3 hover:bg-task-hover cursor-pointer p-1"
       onClick={() => {
         openModal("view");
       }}
