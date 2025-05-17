@@ -1,12 +1,15 @@
 import React from "react";
 
-const EditButton = ({
-  onClick,
-}: {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-}) => {
+const EditButton = ({ onClick }: { onClick: () => void }) => {
   return (
-    <button onClick={onClick} className="text-[#CDCDCD] hover:text-purple" type="button">
+    <button
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
+      className="text-[#CDCDCD] hover:text-purple"
+      type="button"
+    >
       <svg
         width="18.001709"
         height="18.001678"

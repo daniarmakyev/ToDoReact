@@ -4,12 +4,11 @@ import type { ITask } from "../slice/task.slice";
 
 export const taskStatusChange = createAsyncThunk(
     "task/taskStatusChange",
-    async ({ taskId, checked }: { taskId: string; checked: boolean }) => {
+    async ({ taskId, status }: { taskId: string; status: string }) => {
         try {
-            const response = await axios.patch(`http://localhost:3002/tasks/${taskId}`, {
-                status: checked ? "Done" : "In Progress",
+            await axios.patch(`http://localhost:3002/tasks/${taskId}`, {
+                status: status,
             });
-            return response.data;
         } catch (error) {
             console.error("Error updating task:", error);
             throw error;

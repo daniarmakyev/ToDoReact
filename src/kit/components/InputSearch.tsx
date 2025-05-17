@@ -1,17 +1,15 @@
-import type React from "react";
-
 const InputSearch = ({
   value,
   onChange,
 }: {
   value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange:() => void;
 }) => {
   return (
     <div className="relative w-full max-w-[595px] mx-auto text-[16px]">
       <input
         value={value}
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
         type="text"
         placeholder="Search note..."
         className="placeholder:text-input-placeholder w-full bg-primary-bg rounded-sm max-h-9 text-primary border px-4 py-2 min-h-10 border-primary-border focus:outline-2 outline-primary-outline"

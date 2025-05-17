@@ -1,18 +1,11 @@
 {
   "tasks": [
     {
-      "id": "tsk_001",
-      "title": "Looooooooooooooooooooooooooooooooooooong title",
-      "description": "Loooooooooooooooooooooooooooooooooooooooooooooooong description",
-      "status": "In Progress",
-      "date": "2009-09-11T00:00:00.000Z"
-    },
-    {
-      "id": "tsk_002",
-      "title": "Short title",
-      "description": "Short description",
-      "status": "In Progress",
-      "date": "2077-12-10T00:00:00.000Z"
+      "id": "709d",
+      "title": "Task",
+      "description": "task",
+      "status": "Done",
+      "date": "2000-02-16T00:00:00.000Z"
     }
   ]
 }

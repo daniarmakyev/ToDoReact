@@ -1,17 +1,15 @@
 import React from "react";
 
-interface PrimaryButtonProps {
-  outline?: boolean;
-  children?: React.ReactNode;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
-}
-
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({
+const PrimaryButton = ({
   outline = false,
   children,
   onClick,
   type = "button",
+}: {
+  outline?: boolean;
+  children?: React.ReactNode;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
 }) => {
   const baseStyles =
     "uppercase max-w-[100px] px-5 py-2 rounded-md transition-all duration-300 active:border-primary-border";

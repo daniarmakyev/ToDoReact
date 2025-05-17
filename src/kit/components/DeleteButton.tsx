@@ -3,13 +3,13 @@ import React from "react";
 const DeleteButton = ({
   onClick,
 }: {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick: () => void;
 }) => {
   return (
     <button
       onClick={(e) => {
-        e.stopPropagation();
-        onClick(e);
+        e.preventDefault();
+        onClick();
       }}
       className="text-[#CDCDCD] hover:text-[#E50000]"
       type="button"

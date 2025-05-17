@@ -85,7 +85,7 @@ const TaskModal = ({
 
   return (
     <div
-      className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-2.5"
+      className="fixed inset-0 bg-black/70 flex items-center justify-center z-[3] p-2.5"
       onClick={handleOverlayClick}
     >
       <div className="w-full max-w-[500px] bg-primary-bg rounded-xl p-6 shadow-lg">
@@ -97,7 +97,7 @@ const TaskModal = ({
           <Input
             name="title"
             placeholder="Input your note..."
-            onChange={handleChange}
+            onChange={() => handleChange}
             value={formData.title}
             readOnly={isView}
           />
@@ -106,14 +106,14 @@ const TaskModal = ({
             className="min-h-28"
             placeholder="Input your note description..."
             isTextarea
-            onChange={handleChange}
+            onChange={() => handleChange}
             value={formData.description}
             readOnly={isView}
           />
           <Input
             name="date"
             type="date"
-            onChange={handleChange}
+            onChange={() => handleChange}
             value={formData.date}
             readOnly={isView}
           />

@@ -1,3 +1,5 @@
+import { useAppDispatch } from "../../hooks/hooks";
+import { deleteTask, taskStatusChange } from "../../store/action/task.action";
 import type { ITask } from "../../store/slice/task.slice";
 import CheckBox from "./ChekBox";
 import DeleteButton from "./DeleteButton";
@@ -5,17 +7,13 @@ import EditButton from "./EditButton";
 
 const TaskItem = ({
   task,
-  cheked,
-  checkBoxOnClick,
   openModal,
-  onDelete,
 }: {
   task: ITask;
-  cheked: boolean;
-  checkBoxOnClick: React.MouseEventHandler<HTMLButtonElement>;
   openModal: (mode: "edit" | "view") => void;
-  onDelete: (taskId: string) => void; 
 }) => {
+  const dispatch = useAppDispatch();
+  const cheked = task.status === "Done";
   return (
     <li
       className="flex justify-between items-center border-b-purple border-b-[1px] pb-3 pt-3 hover:bg-task-hover cursor-pointer p-1"
@@ -24,7 +22,17 @@ const TaskItem = ({
       }}
     >
       <div className="flex items-center gap-3">
-        <CheckBox checked={cheked} checkBoxOnClick={checkBoxOnClick} />
+        <CheckBox
+          checked={cheked}
+          checkBoxOnClick={() => {
+            dispatch(
+              taskStatusChange({
+                taskId: task.id!,
+                status: task.status === "Done" ? "In Progress" : "Done",
+              })
+            );
+          }}
+        />
         <div>
           <h5
             className={`text-xs sm:text-lg m-0 text-white-black w-[45vw] max-w-[100vw] sm:w-auto sm:max-w-[350px] md:max-w-[450px] truncate whitespace-nowrap overflow-hidden ${
@@ -52,16 +60,14 @@ const TaskItem = ({
           {new Date(task.date).toLocaleDateString("ru-RU")}
         </span>
         <EditButton
-          onClick={(e) => {
-            e.stopPropagation(); 
+          onClick={() => {
             openModal("edit");
           }}
         />
         <DeleteButton
-          onClick={(e) => {
-            e.stopPropagation(); 
+          onClick={() => {
             if (task.id) {
-              onDelete(task.id);
+              dispatch(deleteTask(task.id));
             }
           }}
         />

@@ -1,17 +1,5 @@
 import React from "react";
 
-interface InputProps {
-  type?: string;
-  placeholder?: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
-  className?: string;
-  isTextarea?: boolean;
-  name?: string;
-  value?: string;
-  defaultValue?: string;
-  readOnly: boolean;
-}
-
 const Input = ({
   type = "text",
   placeholder,
@@ -22,7 +10,17 @@ const Input = ({
   value,
   defaultValue,
   readOnly = false,
-}: InputProps) => {
+}: {
+  type?: string;
+  placeholder?: string;
+  onChange?: () => void;
+  className?: string;
+  isTextarea?: boolean;
+  name?: string;
+  value?: string;
+  defaultValue?: string;
+  readOnly: boolean;
+}) => {
   const baseClass =
     "placeholder:text-input-placeholder w-full bg-primary-bg rounded-sm text-primary border px-4 py-2 border-primary-border focus:outline-2 outline-primary-outline";
 

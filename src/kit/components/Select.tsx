@@ -30,7 +30,7 @@ const Select = ({
             : {}
         }
         onClick={() => setOpen((prev) => !prev)}
-        type="button" // Explicitly set button type to prevent form submission
+        type="button"
       >
         {thumb}
         <svg

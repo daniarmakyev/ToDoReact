@@ -4,12 +4,15 @@ const AddTaskButton = ({
   onClick,
   className,
 }: {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => void;
   className?: string;
 }) => {
   return (
     <button
-      onClick={onClick}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick?.();
+      }}
       className={
         className +
         ` bg-purple w-[50px] h-[50px] rounded-full hover:bg-dark-purple shadow-[0_0_4px_0_rgb(108,99,255)] p-2 flex justify-center items-center border-2 border-transparent`

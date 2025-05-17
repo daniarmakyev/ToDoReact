@@ -5,14 +5,14 @@ const CheckBox = ({
   checkBoxOnClick,
 }: {
   checked?: boolean;
-  checkBoxOnClick: React.MouseEventHandler<HTMLButtonElement>;
+  checkBoxOnClick: () => void;
 }) => {
   return (
     <button
       onClick={(e) => {
         e.preventDefault();
-        e.stopPropagation();
-        checkBoxOnClick(e);
+        e.stopPropagation(); 
+        checkBoxOnClick();
       }}
       type="button"
       className={`

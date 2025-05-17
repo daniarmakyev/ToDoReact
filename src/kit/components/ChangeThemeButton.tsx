@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const ChangeThemeButton = ({
-  theme,
-  onClick,
-}: {
-  theme: boolean;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-}) => {
+const ChangeThemeButton = () => {
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode")
+      ? JSON.parse(localStorage.getItem("darkMode")!)
+      : false;
+  });
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    const root = document.documentElement;
+    root.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
   return (
     <button
-      onClick={onClick}
+      onClick={(e) => {
+        e.preventDefault();
+        setDarkMode((prev: boolean) => !prev)
+      }}
       className="bg-purple hover:bg-dark-purple hover:shadow-[0_0_4px_0_rgb(108,99,255)] rounded-md p-2 h-10"
     >
-      {theme ? (
+      {darkMode ? (
         <svg
           width="22.000000"
           height="22.000000"
