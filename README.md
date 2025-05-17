@@ -10,14 +10,6 @@
 - При PATCH POST PUT запросах у меня JSON Server обновляет страницу в браузере, я создал свой сервер на экспрессе для проверки и у меня он не обновлял страницу , у вас может быть по другому это скорее всего ошибка версий или же самого фреймфорка, так как я исп React Vite(19v).
 - Также можете отключить throttling в devtools, так как у меня уже стоит задержка при запросах для имитации.
 
-```typescript
-const state = thunkAPI.getState() as RootState;
-const { task } = state.task;
-thunkAPI.dispatch(
-  getTaskListByFilter({ searchValue: task.title, status: task.status })
-);
-```
-
 ## Возможности
 
 - Добавление, редактирование и удаление задач (название, описание, дата)
